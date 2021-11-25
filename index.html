@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Leanafy - ATS</title>
+  <style>
+    html, body{
+      margin: 0;
+    }
+    .screen {
+      width: 100vw;
+      height: 100vh;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      flex-direction: column;
+    }
+    input{
+      outline: none;
+      border: none;
+      background-color: rgba(226, 226, 226, 0.26);
+      padding: 20px 10px;
+      border-radius: 5px;
+      width: 400px;
+      color: rgba(0, 0, 0, 0.521);
+      transition: all 0.05s ease-in;
+    }
+    input:focus {
+      border-bottom: solid 2px rgba(32, 32, 32, 0.356);
+    }
+    button{
+      border: none;
+      width: 420px;
+      color: white;
+      padding: 15px;
+      border-radius: 5px;
+      margin-top: 30px;
+      background-color: rgb(22, 98, 199);
+      transition: all 0.05s ease-in;
+      cursor: pointer;
+    }
+    button:hover{
+      border-bottom: solid 4px rgb(11, 51, 97);
+    }
+  </style>
+</head>
+<body>
+  <div class="screen">
+    <p style="font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; color: rgba(0, 0, 0, 0.692);"> Leanafy &#9900; ATS </p>
+    <input type="text" placeholder="Client ID"/>
+    <input type="text" placeholder="Client token" style="margin-top: 10px;"/>
+    <button>Submit token for client</button>
+  </div>
+</body>
+</html>
