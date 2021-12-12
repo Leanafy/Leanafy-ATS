@@ -59,8 +59,8 @@
     const button = document.getElementById('submitButton')
     button.innerHTML = 'Loading...'
     
-    const id = document.getElementById('id')
-    const token = document.getElementById('token')
+    const id = document.getElementById('id').value
+    const token = document.getElementById('token').value
     const data = { 
       email: id,
       token: token
