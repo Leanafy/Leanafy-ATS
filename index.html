@@ -48,9 +48,43 @@
 <body>
   <div class="screen">
     <p style="font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; color: rgba(0, 0, 0, 0.692);"> Leanafy &#9900; ATS </p>
-    <input type="text" placeholder="Client ID"/>
-    <input type="text" placeholder="Client token" style="margin-top: 10px;"/>
-    <button>Submit token for client</button>
+    <input type="text" id="id" placeholder="Client ID"/>
+    <input type="text" id="token" placeholder="Client token" style="margin-top: 10px;"/>
+    <button id="submitButton" onclick="submit()">Submit token for client</button>
   </div>
 </body>
+<script>
+  function submit() {
+
+    const button = document.getElementById('submitButton')
+    button.innerHTML = 'Loading...'
+    
+    const id = document.getElementById('id')
+    const token = document.getElementById('token')
+    const data = { 
+      email: id,
+      token: token
+    }
+
+    fetch('https://transporter.leanafywms.com/updateToken', {
+      method: 'POST', // or 'PUT'
+      headers: {
+        'Content-Type': 'application/json',
+      },
+      body: JSON.stringify(data),
+    })
+    .then(response => response.json())
+    .then(data => {
+      if (data.payload.success) {
+        button.innerHTML = 'Submit token for client'
+        alert("Token updated successfully!")
+      }
+    })
+    .catch((error) => {
+      console.error('Error:', error);
+      button.innerHTML = 'Submit token for client'
+    });
+    button.innerHTML = 'Submit token for client'
+  }
+</script>
 </html>
